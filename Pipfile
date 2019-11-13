@@ -15,6 +15,7 @@ django-cors-headers = "*"
 django-filter = "*"
 pyyaml = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.7"
