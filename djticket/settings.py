@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'djticket.urls'
@@ -141,9 +141,6 @@ MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {
     # MAYBE ALREADY DEPRECATED
-    'DEFAULT_FILTER_BACKENDS': [
-        'django_filters.rest_framework.DjangoFilterBackend',
-    ],
 
     # CHANGE LATER
     # 'DEFAULT_PAGINATION_CLASS': [
@@ -163,6 +160,6 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
-ACCOUNT_EMAIL_VERIFICATION = 'none'
-ACCOUNT_AUTHENTICATION_METHOD = 'username'
-ACCOUNT_EMAIL_REQUIRED = False
+# ACCOUNT_EMAIL_VERIFICATION = 'none'
+# ACCOUNT_AUTHENTICATION_METHOD = 'username'
+# ACCOUNT_EMAIL_REQUIRED = False
