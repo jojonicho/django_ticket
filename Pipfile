@@ -7,11 +7,13 @@ verify_ssl = true
 
 [packages]
 django = "*"
-rest-framework = "*"
 djangorestframework = "*"
+coreapi = "*"
+coreapi-cli = "*"
+markdown = "*"
 django-cors-headers = "*"
-rest-auth = "*"
-django-rest-auth = "*"
+django-filter = "*"
+pyyaml = "*"
 
 [requires]
 python_version = "3.7"

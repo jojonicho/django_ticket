@@ -9,12 +9,16 @@ class MovieSerializer(serializers.ModelSerializer):
 
 
 class SeatSerializer(serializers.ModelSerializer):
+    movie = MovieSerializer()
+
     class Meta:
         model = Seat
-        fields = ['id', 'movie_id', 'seat_num']
+        fields = ['id', 'movie_id', 'seat_num', 'movie']
 
 
 class OrderSerializer(serializers.ModelSerializer):
+    seat = SeatSerializer()
+
     class Meta:
         model = Order
-        fields = ['id', 'seat_id', 'created_at']
+        fields = ['id', 'seat_id', 'created_at', 'seat']

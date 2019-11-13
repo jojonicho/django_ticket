@@ -16,8 +16,14 @@ class Movie(models.Model):
 
 
 class Seat(models.Model):
-    movie_id = models.SmallIntegerField(default=0)
+    # movie_id = models.SmallIntegerField(default=0)
     seat_num = models.CharField(max_length=3)
+    movie = models.ForeignKey(
+        Movie, default=0, related_name='seats', on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ('seat_num',)
+        verbose_name_plural = 'Seats'
 
     def __str__(self):
         return self.seat_num
@@ -25,9 +31,15 @@ class Seat(models.Model):
 
 
 class Order(models.Model):
-    seat_id = models.SmallIntegerField(default=0)
+    # seat_id = models.SmallIntegerField(default=0)
     created_at = models.DateTimeField(default=now)
+    seat = models.ForeignKey(
+        Seat, default=0, related_name='orders', on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ('created_at',)
+        verbose_name_plural = 'Orders'
 
     def __str__(self):
-        return self.seat_id
+        return self.created_at
     objects = models.Manager()

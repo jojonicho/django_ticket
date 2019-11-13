@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'rest_framework',
-    'rest_framework.authtoken',
-    'rest_auth',
+    # 'rest_framework.authtoken',
+    'django_filters',
     'corsheaders',
 ]
 
@@ -140,15 +140,26 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'posts')
 MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        # 'rest_framework.permissions.AllowAny'
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
-        # 'rest_framework.authentication.BasicAuthentication',
+    # MAYBE ALREADY DEPRECATED
+    # 'DEFAULT_FILTER_BACKENDS': [
+    #     'django_filters.rest_framework.DjangoFilterBackend',
+    # ],
+
+    # CHANGE LATER
+    # 'DEFAULT_PAGINATION_CLASS': [
+    #     'rest_framework.pagination.PageNumberPagination',
+    # ],
+
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     # 'rest_framework.permissions.AllowAny'
+    #     'rest_framework.authentication.SessionAuthentication',
+    #     'rest_framework.authentication.TokenAuthentication',
+    # ],
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
     ],
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.AllowAny',
-    # ]
+    'PAGE_SIZE': 10,
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
