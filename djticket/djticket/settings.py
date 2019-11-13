@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     # 'rest_framework.authtoken',
-    'django_filters',
+    # 'django_filters',
     'corsheaders',
 ]
 
@@ -141,9 +141,9 @@ MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {
     # MAYBE ALREADY DEPRECATED
-    # 'DEFAULT_FILTER_BACKENDS': [
-    #     'django_filters.rest_framework.DjangoFilterBackend',
-    # ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ],
 
     # CHANGE LATER
     # 'DEFAULT_PAGINATION_CLASS': [
