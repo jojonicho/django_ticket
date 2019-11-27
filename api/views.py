@@ -1,6 +1,8 @@
 from rest_framework import viewsets, status
-from rest_framework.filters import OrderingFilter
+# from rest_framework.filters import OrderingFilter
+from django_filters import rest_framework
 from rest_framework.response import Response
+from rest_framework import filters
 
 from .models import Movie, Seat, Order
 
@@ -14,6 +16,11 @@ from .utils import generate_id, generate_time
 
 
 class MovieViewSet(viewsets.ModelViewSet):
+    search_fields = ['name', 'desc']
+    # filter_backends = (filters.SearchFilter,)
+    filter_backends = (
+        rest_framework.DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter,)
+    filter_fields = ('name', 'desc')
     serializer_class = MovieSerializer
     queryset = Movie.objects.all()
 
@@ -33,6 +40,8 @@ class MovieViewSet(viewsets.ModelViewSet):
 
 
 class SeatViewSet(viewsets.ModelViewSet):
+    search_fields = ['seat_num']
+    filter_backends = (filters.SearchFilter,)
     serializer_class = SeatSerializer
     queryset = Seat.objects.all()
 
