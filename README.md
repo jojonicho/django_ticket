@@ -6,4 +6,6 @@ https://jonathannicholas-django-ticket.herokuapp.com/api/
 /?name=<moviename>&desc=<genre>
   
 # /seats
+/?search=<seat_num>
+  
 # /tickets
