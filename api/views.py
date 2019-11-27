@@ -25,13 +25,13 @@ class MovieViewSet(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
 
     def create_movie(self, request):
-        if request.method == 'PUT':
-            name = int(request.POST['film_id'])
-            desc = int(request.POST['film_id'])
-            play_date_time = int(request.POST['kursi_id'])
-            created_at = generate_id()
+        if request.method == 'POST':
+            name = request.POST['name']
+            desc = request.POST['desc']
+            play_date_time = request.POST['play_date_time']
+            mov_id = generate_id()
             movie = Movie(name=name, desc=desc,
-                          play_date_time=play_date_time, created_at=created_at)
+                          play_date_time=play_date_time)
             Movie.objects.create(movie)
             serializers = MovieSerializer(movie, many=True)
             return JsonResponse(serializers.data)
@@ -46,12 +46,12 @@ class SeatViewSet(viewsets.ModelViewSet):
     queryset = Seat.objects.all()
 
     def create_seat(self, request):
-        if request.method == 'PUT':
-            film_id = int(request.POST['film_id'])
-            kursi_id = int(request.POST['kursi_id'])
+        if request.method == 'POST':
+            seat_num = request.POST['seat_num']
+            movie = request.POST['movie']
             ticket_id = generate_id()
-            seat = Seat(film_id=film_id, kursi_id=kursi_id,
-                        ticket_id=ticket_id)
+            seat = Seat(seat_num=seat_num, movie=movie)
+            # ticket_id=ticket_id)
             Seat.objects.create(seat)
             serializers = SeatSerializer(seat, many=True)
             return JsonResponse(serializers.data)

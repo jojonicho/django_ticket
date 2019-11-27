@@ -25,7 +25,6 @@ from rest_framework.documentation import include_docs_urls
 router = DefaultRouter()
 router.register(r'movies', views.MovieViewSet, base_name='movies')
 router.register(r'seats', views.SeatViewSet, base_name='seats')
-# router.register(r'orders', OrderViewSet, base_name='orders')
 router.register(r'orders', views.OrderViewSet, base_name='orders')
 schema_view = get_schema_view(title='Bookings API',
                               description='An API for movie ticketings')
