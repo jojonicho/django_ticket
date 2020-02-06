@@ -1,6 +1,3 @@
 from django.contrib import admin
-from .models import Movie, Seat, Order
-# Register your models here.
-admin.site.register(Movie)
-admin.site.register(Seat)
-admin.site.register(Order)
+from .models import Item
+admin.site.register(Item)

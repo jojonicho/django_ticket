@@ -25,8 +25,8 @@ SECRET_KEY = '7n(+l2v0j91xf9gcfqx$1(pd!isixz^f)p#vo1r8j87zsq$gcf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['jonathannicholas-django-ticket.herokuapp.com',
-                 '127.0.0.1']
+ALLOWED_HOSTS = ['jonathannicholas-pti.herokuapp.com',
+                 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # 'rest_framework.authtoken',
     # 'django_filters',
     'corsheaders',
+    'django_filters'
 ]
 
 MIDDLEWARE = [

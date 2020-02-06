@@ -8,10 +8,11 @@ verify_ssl = true
 [packages]
 django = "*"
 djangorestframework = "*"
-whitenoise = "==3.3.1"
+whitenoise = "*"
 gunicorn = "*"
 coreapi = "*"
 coreapi-cli = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.7"
