@@ -1,18 +1,15 @@
-# django_ticket
-https://jonathannicholas-django-ticket.herokuapp.com/api/
+# PTI Shopping Cart
+https://joni-pti.herokuapp.com/api/
 # Endpoints
-# /movies
+# /item
 ### POST request
 {
-	"name" : "Jonathan Movie 2",
-	"desc" : "Drama",
-	"play_date_time" : "2019-12-22"
+	"name" : "My Favorite Pillow",
+	"price" : "10000",
+	"quantity" : "69",
 }
 ### GET Request
 /?search=<something>
-/?name=<moviename>&desc=<genre>
-  
-# /seats
-/?search=<seat_num>
-  
-# /tickets
+/?name=<itemname>&price=<price>
+
+# /item/{id}
