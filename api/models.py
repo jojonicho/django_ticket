@@ -4,7 +4,7 @@ from django.utils.timezone import now
 
 class Item(models.Model):
     name = models.CharField(max_length=20)
-    price = models.IntegerField()
+    price = models.DecimalField(decimal_places=2, max_digits=10)
     quantity = models.SmallIntegerField()
     created_at = models.DateTimeField(default=now, editable=False)
 
