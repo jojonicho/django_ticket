@@ -21,12 +21,11 @@ from api import views
 from rest_framework.routers import DefaultRouter
 from rest_framework.schemas import get_schema_view
 from rest_framework.documentation import include_docs_urls
+from rest_framework.authtoken.views import obtain_auth_token
 
 router = DefaultRouter()
-# router.register(r'movies', views.MovieViewSet, base_name='movies')
-# router.register(r'seats', views.SeatViewSet, base_name='seats')
-# router.register(r'orders', views.OrderViewSet, base_name='orders')
-router.register(r'item', views.ItemViewSet)
+router.register(r'item', views.ItemViewSet, obtain_auth_token)
+
 
 schema_view = get_schema_view(title='Shopping API',
                               description='An API for fasilkom shopping :)')
@@ -37,5 +36,7 @@ urlpatterns = [
     # path('rest-auth/', include('rest_auth.urls')),
     path('schema/', schema_view),
     path('api/', include(router.urls)),
-    path('docs/', include_docs_urls(title='Tickets API'))
+    path('docs/', include_docs_urls(title='Tickets API')),
+    path('token/', obtain_auth_token, name='api_token_auth')
+
 ]
