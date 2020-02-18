@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: whitesmoke;
+    font-family: 'Nunito';
+}
+.container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title {
+    text-align: center;
+    font-size: 5vw;
+    font-weight: bold;
+}
+.hello{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.info{
+    padding: 10px 0px;
+}
+.bio {
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.subtitle{
+    font-size: 2.5vw;
+    text-align: center;
+}
+.card {
+    margin: 60px;
+    width: 70%;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-evenly;
+    box-shadow: 1px 1px 8px rgb(87, 87, 87);
+    border-radius: 15px;
+}
+.info{
+    padding: 25px 60px
+}
+.bio img {
+    width: 30vw;
+    border-radius: 50%;
+    box-shadow: 1px 1px 8px rgb(87, 87, 87);
+}
+.affiliates {
+    padding: 10px;
+}
+.affiliates img {
+    cursor: pointer;
+    width: 5vw;
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px grey;
+}
+.affiliates img:hover{
+    background: rgb(161, 161, 161);
+}
+ul li {
+    font-size: 2vw;
+  }

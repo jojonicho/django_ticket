@@ -133,11 +133,11 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MEDIA_URL = '/media/'
 
 # os.path.join(BASE_DIR, 'media')  # .replace('\\', '/')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'posts')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'posts')
 MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {

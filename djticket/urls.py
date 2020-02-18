@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from api import views
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 from rest_framework.routers import DefaultRouter
 from rest_framework.schemas import get_schema_view
 from rest_framework.documentation import include_docs_urls
 from rest_framework.authtoken.views import obtain_auth_token
+from django.views.generic import TemplateView
 
 router = DefaultRouter()
 router.register(r'item', views.ItemViewSet, obtain_auth_token)
@@ -37,6 +39,11 @@ urlpatterns = [
     path('schema/', schema_view),
     path('api/', include(router.urls)),
     path('docs/', include_docs_urls(title='Tickets API')),
-    path('token/', obtain_auth_token, name='api_token_auth')
-
+    path('token/', obtain_auth_token, name='api_token_auth'),
+    path('', TemplateView.as_view(template_name='index.html')),
+    path('cv/', TemplateView.as_view(template_name='cv.html')),
+    path('story1/', TemplateView.as_view(template_name='story1.html')),
+    path('story3/', TemplateView.as_view(template_name='story3.html')),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
